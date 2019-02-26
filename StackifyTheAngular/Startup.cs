@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using StackifyMiddleware;
 
 namespace StackifyTheAngular
 {
@@ -32,6 +33,8 @@ namespace StackifyTheAngular
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+
+            app.UseStackifyMiddleware();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
